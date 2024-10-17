@@ -5,8 +5,8 @@ using namespace std;
 
 struct student{           //自定义类
     int id;
-    char *name;
-    char *major;
+    char name[20];
+    char major[20];
 };
 
 ostream& operator<<(ostream &os,student &stu){
@@ -57,8 +57,15 @@ void test_struct(){
     student sut_2={321,"rose","Literature"};
     Vector<student> stu(3);
     stu.push(stu_1);
+    stu.push(sut_2);
     cin>>stu;
-    cout<<stu;
+    cout<<stu<<endl;
+    
+    Vector<student> copy(stu);
+    cout<<copy<<'\n';
+
+    cout<<stu[1];//下标测试
+
 }
 
 

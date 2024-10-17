@@ -20,6 +20,17 @@ istream& operator>>(istream &is,student &stu){
 void test_int();
 void test_string();
 void test_struct();
+void test_2D(){
+    Vector<Vector<int>> asa(3);
+    asa.push(9);
+    asa[0].push(123);
+    cout<<asa;
+
+    Vector<Vector<int>> sas(3);
+    cin>>sas;
+    cout<<sas<<'\n';
+    cout<<sas[1];
+}
 
 void test_string(){
     Vector<string> ooo(3);//测试string下的push功能和构造函数
@@ -30,14 +41,14 @@ void test_string(){
     ooo.push("ccc");
     cout<<ooo<<'\n';            //输出运算符重载
     
-    Vector<string>AAA(4,"oooo");//测试string下的另一构造函数
+    Vector<string>AAA(6,"oooo");//测试string下的另一构造函数
     cout<<AAA<<'\n';
 
     Vector<string>BBB(AAA);//测试复制构造函数
     cout<<BBB<<'\n';
     
     cout<<"operator+\n";
-    cout<< ooo+AAA;       //加法测试
+    cout<< ooo+AAA;       //加法测试,预期结果是字符串变长
 
     ooo.swap(AAA);
     cout<<ooo<<'\n';
@@ -58,6 +69,7 @@ void test_struct(){
     Vector<student> stu(3);
     stu.push(stu_1);
     stu.push(sut_2);
+    cout<<"please input\n";
     cin>>stu;
     cout<<stu<<endl;
     
@@ -199,7 +211,4 @@ void test_int() {
     catch(char *p){
         cout<<p;
     }
-    // cout<<"\n2D\n";
-    // Vector<Vector<int>> asd(2);
-    // cout<<asd;
 }

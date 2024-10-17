@@ -371,6 +371,7 @@ ostream& operator<<(ostream& os, Vector<ty>& vec)
         cout << vec.p[i];
         cout << ' ';
     }
+    cout<<'\n';
     return os;
 }
 template <typename ty>           //��>>���أ���ʹ��cin���vector����������
@@ -381,10 +382,13 @@ istream& operator >>(istream& is, Vector<ty>& vec)
     ty temp;
     for (i = 0;i<vec.capacity; i++)
     {   
+        ty temp;
         cin>>temp;
         vec.push(temp);
-        if(cin.peek()=='\n')
+        if(cin.peek()=='\n'){
+            cin.get();
             break;
+        }
         
     }
     return is;
